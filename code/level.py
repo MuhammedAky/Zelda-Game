@@ -47,10 +47,12 @@ class Level:
 							Tile((x,y),[self.visible_sprites,self.obstacle_sprites],'object',surf)
 
 		self.player = Player((2000,1430),[self.visible_sprites],self.obstacle_sprites)
+	
 	def run(self):
 		# update and draw the game
 		self.visible_sprites.custom_draw(self.player)
 		self.visible_sprites.update()
+		debug(self.player.status)
 
 
 class YSortCameraGroup(pygame.sprite.Group):
@@ -69,7 +71,7 @@ class YSortCameraGroup(pygame.sprite.Group):
 
 	def custom_draw(self,player):
 
-		# getting the offset
+		# getting the offset 
 		self.offset.x = player.rect.centerx - self.half_width
 		self.offset.y = player.rect.centery - self.half_height
 

@@ -11,8 +11,8 @@ class Game:
 		pygame.display.set_caption('Zelda')
 		self.clock = pygame.time.Clock()
 
-		self.level = Level()
-
+		self.level = Level() 
+	
 	def run(self):
 		while True:
 			for event in pygame.event.get():
